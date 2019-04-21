@@ -7,8 +7,6 @@ app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: false
   })); 
-app.get('/', (req, res) => res.send('Hello World!'))
-
 app.post('/login',(req,res) => {
     if(req.body.userName == 'admin' && req.body.password == 'admin') {
         res.json("{'status':'success'}");
