@@ -12,7 +12,15 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.post('/login',(req,res) => {
     var userName = req.body.userName,
     var password = req.body.password
-    res.json(req.body)
+    
+    if(userName === 'admin' && password === 'admin) {
+           res.json('{ 'status':'success'})
+
+       } else {
+          res.json('{ 'status':'failure'})
+
+
+       }
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
